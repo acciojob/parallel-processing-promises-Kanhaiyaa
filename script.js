@@ -7,3 +7,33 @@ const images = [
   { url: "https://picsum.photos/id/238/200/300" },
   { url: "https://picsum.photos/id/239/200/300" },
 ];
+
+
+const a=document.getElemeentById("download-images-button").addEventListener("click",()=>{
+	document.write(a)
+})
+
+const myPromise= new Promise(fuction(resolve,reject){
+	resolve();
+	reject()
+})
+
+myPromise.then(
+	function (value) 
+	function(error){
+	  return `Failed to load image's URL: ${image.url}`
+	}
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
