@@ -9,21 +9,29 @@ const images = [
 ];
 
 
-const a=document.getElemeentById("download-images-button").addEventListener("click",()=>{
-	document.write(a)
-})
+const imageLoad=((url) =>{
+	return `<img src='${url} />'`
+}
+				 
+const all= async () => {
 
-const myPromise= new Promise(fuction(resolve,reject){
-	resolve();
-	reject()
-})
-
-myPromise.then(
-	function (value) 
-	function(error){
-	  return `Failed to load image's URL: ${image.url}`
+	try{
+		const gallery=await Promiseall(images.map((val) => fetch(val.url))) 
+         gallery.forEach((val) => {
+			 output.InsertAdjecentHtml("beforeend", imageload(val.url))
+		 })
+	  return gallery
+		
+		}catch(err){
+		   return "failed to load the images"
 	}
-)
+}
+
+btn.addEventListener("click",() =>{
+	images.forEach((val) =>{
+		output.insertAdjecentHtml(beforeend,images(val.url))
+	})
+})
 
 
 
@@ -34,6 +42,31 @@ myPromise.then(
 
 
 
+
+
+
+// const imageLoad = (url) => {
+//   return `<img src='${url}' />`;
+// };
+
+// const all = async () => {
+//   try {
+//     const gallery = await Promise.all(images.map((val) => fetch(val.url)));
+//     gallery.forEach((val) => {
+//       output.insertAdjacentHTML("beforeend", imageLoad(val.url));
+//     });
+
+//     return gallery;
+//   } catch (err) {
+//     return "failed to load images";
+//   }
+// };
+
+// btn.addEventListener("click", () => {
+//   images.forEach((val) => {
+//       output.insertAdjacentHTML("beforeend", imageLoad(val.url));
+//     });
+// });
 
 
 
