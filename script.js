@@ -18,7 +18,7 @@ const all= async () => {
 	try{
 		const gallery=await Promiseall(images.map((val) => fetch(val.url))) 
          gallery.forEach((val) => {
-			 output.InsertAdjecentHtml("beforeend", imageload(val.url))
+			 output.InsertAdjacentHtml("beforeend", imageload(val.url))
 		 })
 	  return gallery
 		
@@ -29,7 +29,7 @@ const all= async () => {
 
 btn.addEventListener("click",() =>{
 	images.forEach((val) =>{
-		output.insertAdjecentHtml(beforeend,images(val.url))
+		output.insertAdjacentHtml("beforeend",imageLoad(val.url))
 	})
 })
 
